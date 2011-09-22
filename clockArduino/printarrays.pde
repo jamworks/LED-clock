@@ -12,7 +12,7 @@ void printArrays(){
     }
     Serial.println();
   }
-  //jWheel(secondLites[0][i], secondLites[1][i])
+  /*jWheel(secondLites[0][i], secondLites[1][i])
   for(int i=0; i<3; i++){
     if(secondArray[i][0]>=0){
       int LED = secondArray[i][0];
@@ -29,6 +29,7 @@ void printArrays(){
     }
     Serial.println();
   }
+  */
   /*
   Serial.print("minutes  ");
    Serial.println("led    color  int");

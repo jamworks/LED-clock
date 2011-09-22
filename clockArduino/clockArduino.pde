@@ -22,7 +22,7 @@ int intDelta=4;
 int ledBGcolor=32;  //green
 int theHour = 1;
 int ledBGintensity=3;  //background intensity
-int secondLites[11][2] ={{50,3},{53,6},{56,9},{59,12},{60,16},{68,28},{60,16},{59,12},{56,9},{53,6},{50,3}};
+int secondLites[11][2] ={{44,3},{50,4},{56,9},{59,12},{64,16},{68,28},{64,16},{59,12},{56,9},{50,4},{44,3}};
 int secondArray[3][2] = {{-1, -1},{-1, -1},{-1, -1}}; 
 int minuteArray[3][3]; 
 void setup(){
@@ -49,7 +49,7 @@ void setup(){
 
 void loop(){ 
 
-  if(millis() > lastMilli + 100){  //Temp clock 1 second tic
+  if(millis() > lastMilli + 1000){  //Temp clock 1 second tic
     oneSecond();    //update one second
     seconds += 1;
     if(seconds>59){

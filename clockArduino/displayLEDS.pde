@@ -6,8 +6,17 @@ void displayLEDS(){
   for(int i=0; i<12; i++){
     //seconds
     for(int k=0; k<3; k++){  //This is not right yet.....
-      if(secondArray[k][0] == i)
-        strip.setPixelColor(i, jWheel(secondLites[0][i], secondLites[1][i]));
+      if(secondArray[k][0] == i){
+      int LEDcolor = secondLites[i][0];
+      int LEDint = secondLites[i][1];
+        Serial.print("LED ");
+        Serial.print(i);
+        Serial.print(",  color ");
+        Serial.print(LEDcolor);
+        Serial.print(", intensity ");
+        Serial.println(LEDint);
+        strip.setPixelColor(i, jWheel(LEDcolor, LEDint));
+      }
     }
     /*
     for(int k=0; k<3; k++){   
@@ -18,7 +27,7 @@ void displayLEDS(){
   }
   //temp fixed hour LED
 //  strip.setPixelColor(theHour, jWheel(16,24));
-  printArrays();
+  //printArrays();
   strip.show();
 }
 

@@ -6,6 +6,7 @@
 // Some oiginal code by Bliptronics.com Ben Moyes 2009
 // Led code cleaned up and Object-ified by ladyada 2010
 // This version1_4 by Jerry Jeffress Sept,2011
+//this is the new version in git
 /********************************************************/
 //LPD6803-based RGB LED Modules
 //LEDs are bliptronics 8mm Naked PCB module
@@ -21,7 +22,7 @@ int intDelta=4;
 int ledBGcolor=32;  //green
 int theHour = 1;
 int ledBGintensity=3;  //background intensity
-int secondLites[2][11] ={{60,60,60,60,60,76,60,60,60,60,60},{8,12,16,20,24,28,24,20,16,12,8}};
+int secondLites[11][2] ={{44,8},{48,12},{52,16},{56,20},{60,24},{64,28},{60,24},{56,20},{52,16},{48,12},{44,8}};
 int secondArray[3][2] = {{-1, -1},{-1, -1},{-1, -1}}; 
 int minuteArray[3][3]; 
 void setup(){

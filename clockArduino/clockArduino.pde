@@ -21,8 +21,8 @@ int intDelta=4;
 int ledBGcolor=32;  //green
 int theHour = 1;
 int ledBGintensity=3;  //background intensity
-int secondLites[2][11] ={{44,48,52,56,60,64,60,56,52,48,44},{8,12,16,20,24,28,24,20,16,12,8}};
-int secondArray[3][3]; 
+int secondLites[2][11] ={{60,60,60,60,60,76,60,60,60,60,60},{8,12,16,20,24,28,24,20,16,12,8}};
+int secondArray[3][2] = {{-1, -1},{-1, -1},{-1, -1}}; 
 int minuteArray[3][3]; 
 void setup(){
   Serial.begin(9600);
@@ -43,12 +43,12 @@ void setup(){
   }
   strip.show();
   delay(1000);
-  oneMinute();
+  //oneMinute();
 }
 
 void loop(){ 
 
-  if(millis() > lastMilli + 100){  //Temp clock 1 second tic
+  if(millis() > lastMilli + 1000){  //Temp clock 1 second tic
     oneSecond();    //update one second
     seconds += 1;
     if(seconds>59){

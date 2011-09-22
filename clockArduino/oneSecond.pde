@@ -7,7 +7,6 @@ void oneSecond(){
   for(int i=0; i<3; i++){
     secondArray[i][0]= -1;  //no led number
     secondArray[i][1]= -1;  //no color
-    secondArray[i][2]= -1;  //no intensity
   }
 
   if(seconds%5 == 0){  //3 leds ON
@@ -18,18 +17,18 @@ void oneSecond(){
     ledC = ledA + 1;
     if(ledC>11)
       ledC = ledC - 12;
-    intensity = (6 - 5)*intDelta +2;
-    secondArray[0][0]=ledB;
-    secondArray[0][1]=38;
-    secondArray[0][2]=intensity;
-    intensity = (8)*intDelta;
-    secondArray[1][0]=ledA;
-    secondArray[1][1]=68;
-    secondArray[1][2]=intensity;
-    intensity = (6 - 5)*intDelta +2;
-    secondArray[2][0]=ledC;
-    secondArray[2][1]=38;
-    secondArray[2][2]=intensity;
+   // intensity = (6 - 5)*intDelta +2;
+    secondArray[0][0]=ledB;  //which LED
+    secondArray[0][1]=0;    //LED secondLites array index
+    //secondArray[0][2]=intensity;
+    //intensity = (8)*intDelta;
+    secondArray[1][0]=ledA;  //Whick LED
+    secondArray[1][1]=5;  //LED secondLites array index
+    //secondArray[1][2]=intensity;
+    //intensity = (6 - 5)*intDelta +2;
+    secondArray[2][0]=ledC;  //which LED
+    secondArray[2][1]=10;  //LED secondLites array index
+    //secondArray[2][2]=intensity;
 
   }
   else{  //2 leds ON
@@ -38,19 +37,20 @@ void oneSecond(){
     if(ledC>11)
       ledC = 0;
     int diff = seconds - ledB*5;
-    intensity =  (6 - diff)*intDelta;
-    secondArray[0][0]=ledB;
-    secondArray[0][1]=64 - diff*6 ;
-    secondArray[0][2]=intensity;
-    intensity =  (diff + 1)*intDelta;
-    secondArray[1][0]=ledC;
-    secondArray[1][1]=38 + diff*6;
-    secondArray[1][2]=intensity;
+    //intensity =  (6 - diff)*intDelta;
+    secondArray[0][0]=ledB;  //which led
+    secondArray[0][1]=5 - diff ;   //LED secondLites array index
+    //secondArray[0][2]=intensity;
+   // intensity =  (diff + 1)*intDelta;
+    secondArray[1][0]=ledC;  //which led
+    secondArray[1][1]=10 - diff;  //LED secondLites array index
+    //secondArray[1][2]=intensity;
   }
-  oneMinute();
+ // oneMinute();
   displayLEDS();
 
 }
+
 
 
 

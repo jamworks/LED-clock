@@ -46,7 +46,7 @@ void oneSecond(){
     secondArray[1][1]=10 - diff;  //LED secondLites array index
     //secondArray[1][2]=intensity;
   }
- // oneMinute();
+// oneMinute();
   displayLEDS();
 
 }

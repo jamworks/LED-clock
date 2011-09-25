@@ -1,12 +1,12 @@
 #include <TimerOne.h>
 #include "LPD6803.h"
 
-//First tests of the LED clock 
-// now 12 LEDs 
+//More tests of the LED clock 
+// This is now a branch newArrays. A new way to use array for the led data
 // Some oiginal code by Bliptronics.com Ben Moyes 2009
 // Led code cleaned up and Object-ified by ladyada 2010
-// This version1_4 by Jerry Jeffress Sept,2011
-//this is the new version in git
+// This branch newArrays by Jerry Jeffress Sept,2011
+
 /********************************************************/
 //LPD6803-based RGB LED Modules
 //LEDs are bliptronics 8mm Naked PCB module

@@ -2,36 +2,19 @@ void displayLEDS(){
   //Set background leds 
   for(int i=0; i<12; i++)
     strip.setPixelColor(i, jWheel(ledBGcolor, ledBGintensity));
-  //calc led colors
+  //delay(300);
+   
   for(int i=0; i<12; i++){
-    //seconds
-    for(int k=0; k<3; k++){  //This is not right yet.....
-      if(secondArray[k][0] == i){
-        int litsIdx = secondArray[k][1];
-        int LEDcolor = secondLites[litsIdx][0];
-        int LEDint = secondLites[litsIdx][1];
-
-       // Serial.print("LED ");
-        //Serial.print(i);
-       // Serial.print(",  color ");
-       // Serial.print(LEDcolor);
-       // Serial.print(", intensity ");
-       // Serial.println(LEDint);
-        strip.setPixelColor(i, jWheel(LEDcolor, LEDint));
-      }
+    if(clockLEDS[i][0] >= 0){//skip the -1 values
+      int secIdx = clockLEDS[i][0];
+      strip.setPixelColor(i, jWheel(secondLites[secIdx][0], secondLites[secIdx][1]));
     }
-    /*
-    for(int k=0; k<3; k++){   
-     if(minuteArray[k][0] == i)
-     strip.setPixelColor(i, jWheel(minuteArray[k][1], minuteArray[k][2]));
-     }
-     */
   }
-  //temp fixed hour LED
-  //  strip.setPixelColor(theHour, jWheel(16,24));
- // printArrays();
+
   strip.show();
 }
+
+
 
 
 

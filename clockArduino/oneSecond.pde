@@ -5,7 +5,7 @@ void oneSecond(){
   // Set clockLEDS array to -1
   for(int i=0; i<12; i++){
    clockLEDS[i][0] = -1; 
-    clockLEDS[i][1] = -1; 
+    //clockLEDS[i][1] = -1; 
   }
 
   if(seconds%5 == 0){  //3 leds ON
@@ -30,8 +30,8 @@ void oneSecond(){
     clockLEDS[ledB][0]=5 + seconds%5;  //index for secondLites   second color/value
     clockLEDS[ledC][0]= seconds%5;  //index for secondLites   second color/value
   }
-  // oneMinute();
-  printClockLEDS();
+  oneMinute();
+// printClockLEDS();
   displayLEDS();
 
 }

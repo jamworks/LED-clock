@@ -18,18 +18,17 @@ LPD6803 strip = LPD6803(12, dataPin, clockPin);
 long lastMilli=0;
 int seconds=0; 
 int minutes = 0;
-int intDelta=4;
 int ledBGcolor=32;  //green
 int theHour = 1;
 int ledBGintensity=3;  //background intensity
 // secondLites array is the color and intensity of each possible seconds light
 int secondLites[11][2] ={{44,3},{50,4},{56,9},{59,12},{64,16},{68,28},{64,16},{59,12},{56,9},{50,4},{44,3}};
-//int secondArray[3][2] = {{-1, -1},{-1, -1},{-1, -1}}; 
-int minuteArray[3][3]; 
+// minuteLites array is the color and intensity of each possible seconds light
+int minuteLites[11][2] ={{22,3},{17,4},{12,9},{6,12},{4,16},{0,20},{4,16},{6,12},{12,9},{17,4},{22,3}};
 // clockLEDs array hold the data for all the clock leds before merging the seconds and minutes
 // row 0 is seconds row 1 is minutes
-
 int clockLEDS[12][2];
+
 void setup(){
   Serial.begin(9600);
   strip.setCPUmax(30);  // start with 50% CPU usage. 
@@ -41,12 +40,12 @@ void setup(){
   
   strip.show();
   delay(1000);
-  //oneMinute();
+  oneMinute();
 }
 
 void loop(){ 
 
-  if(millis() > lastMilli + 1000){  //Temp clock 1 second tic
+  if(millis() > lastMilli + 100){  //Temp clock 1 second tic
     oneSecond();    //update one second
     seconds += 1;
     if(seconds>59){

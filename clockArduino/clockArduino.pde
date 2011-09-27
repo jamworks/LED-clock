@@ -18,14 +18,14 @@ LPD6803 strip = LPD6803(12, dataPin, clockPin);
 long lastMilli=0;
 int seconds=0; 
 int minutes = 0;
-int hour = 4;
+int hour = 1;
 int ledBGcolor=32;  //green
-int theHour = 1;
+int theHour = 4;
 int ledBGintensity=3;  //background intensity
 // secondLites array is the color and intensity of each possible seconds light
-int secondLites[11][2] ={{44,3},{50,4},{56,9},{59,12},{64,16},{68,28},{64,16},{59,12},{56,9},{50,4},{44,3}};
+int secondLites[11][2] ={{44,3},{50,4},{56,7},{59,12},{64,16},{68,28},{64,16},{59,12},{56,7},{50,4},{44,3}};
 // minuteLites array is the color and intensity of each possible seconds light
-int minuteLites[11][2] ={{22,3},{17,4},{12,9},{6,12},{4,16},{0,20},{4,16},{6,12},{12,9},{17,4},{22,3}};
+int minuteLites[11][2] ={{22,3},{17,4},{12,9},{6,12},{3,14},{0,16},{3,14},{6,12},{12,9},{17,4},{22,3}};
 // clockLEDs array hold the data for all the clock leds before merging the seconds and minutes
 // row 0 is seconds row 1 is minutes
 int clockLEDS[12][2];
@@ -55,6 +55,8 @@ void loop(){
       minutes += 1;    //temp minutes
       if(minutes>59){
         theHour = theHour + 1;
+        if(theHour>11)
+          theHour = 0;
         minutes = 0; 
       }
     }

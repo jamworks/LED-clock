@@ -51,7 +51,9 @@ unsigned int jWheel(byte jWheelPos, byte intensity){
   b = white + b*intensity/32;
   // b = constrain(b, 0, 255);
   //Color for a LPD6803-based RGB LED Modules
-  return(Color(r/8,g/8,b/8));
+    return(Color(r/8,g/8,b/8));
+ 
+  
 }
 // Create a 15 bit color value from R,G,B jerry reodered color to rgb
 unsigned int Color(byte r, byte g, byte b)

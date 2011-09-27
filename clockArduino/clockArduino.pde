@@ -18,6 +18,7 @@ LPD6803 strip = LPD6803(12, dataPin, clockPin);
 long lastMilli=0;
 int seconds=0; 
 int minutes = 0;
+int hour = 4;
 int ledBGcolor=32;  //green
 int theHour = 1;
 int ledBGintensity=3;  //background intensity

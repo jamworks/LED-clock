@@ -46,7 +46,7 @@ void setup(){
 
 void loop(){ 
 
-  if(millis() > lastMilli + 100){  //Temp clock 1 second tic
+  if(millis() > lastMilli + 1000){  //Temp clock 1 second tic
     oneSecond();    //update one second
     seconds += 1;
     if(seconds>59){

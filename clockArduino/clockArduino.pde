@@ -69,7 +69,7 @@ void loop(){
       }
     }
     lastMilli = millis();
-
+  printTime();
   }
 
   // slowRainbow();

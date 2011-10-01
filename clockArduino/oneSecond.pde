@@ -1,6 +1,6 @@
 void oneSecond(){
-  Serial.print("seconds= ");
-  Serial.println(seconds);
+  //Serial.print("seconds= ");
+ // Serial.println(seconds);
   int ledA, ledB, ledC;
   // Set clockLEDS array to -1
   for(int i=0; i<12; i++){

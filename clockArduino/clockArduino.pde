@@ -1,11 +1,12 @@
 #include <TimerOne.h>
 #include "LPD6803.h"
-
+#include <Wire.h>
+#include "RTClib.h"
 //More tests of the LED clock 
-// This is now a branch newArrays. A new way to use array for the led data
+// This is now a branch RTClock. use the DS1307 clock chip
 // Some oiginal code by Bliptronics.com Ben Moyes 2009
 // Led code cleaned up and Object-ified by ladyada 2010
-// This branch newArrays by Jerry Jeffress Sept,2011
+// This branch RTClock by Jerry JeffressOct,2011
 
 /********************************************************/
 //LPD6803-based RGB LED Modules
@@ -15,6 +16,7 @@ int dataPin = 2;       // 'yellow' wire
 int clockPin = 3;      // 'green' wire
 // Set the first variable to the NUMBER of pixels. 12 for led clock
 LPD6803 strip = LPD6803(12, dataPin, clockPin);
+RTC_DS1307 RTC;
 long lastMilli=0;
 int seconds=0; 
 int minutes = 0;
@@ -32,6 +34,12 @@ int clockLEDS[12][2];
 
 void setup(){
   Serial.begin(9600);
+  Wire.begin();
+  RTC.begin();
+  pinMode(17, OUTPUT);  //set analog pin for DS1307 power
+  digitalWrite(17, HIGH);
+  pinMode(16, OUTPUT);  
+  digitalWrite(16, LOW);
   strip.setCPUmax(30);  // start with 50% CPU usage. 
   // Start up the LED counter
   strip.begin();

@@ -19,6 +19,7 @@ LPD6803 strip = LPD6803(12, dataPin, clockPin);
 RTC_DS1307 RTC;
 long lastMilli=0;
 int seconds=0; 
+int lastSecond;
 int minutes = 0;
 int hour = 1;
 int ledBGcolor=32;  //green
@@ -50,10 +51,20 @@ void setup(){
   strip.show();
   delay(1000);
   oneMinute();
+  DateTime now = RTC.now();
+  lastSecond = now.second();
 }
 
 void loop(){ 
-
+  DateTime now = RTC.now();
+  if(lastSecond != now.second()){
+    seconds = now.second();
+    minutes = now.minute();
+    theHour = now.hour()%12;
+    oneSecond();  //update leds on clock
+    lastSecond = now.second();
+  }
+/*
   if(millis() > lastMilli + 1000){  //Temp clock 1 second tic
     oneSecond();    //update one second
     seconds += 1;
@@ -71,7 +82,7 @@ void loop(){
     lastMilli = millis();
   printTime();
   }
-
+*/
   // slowRainbow();
 
 }

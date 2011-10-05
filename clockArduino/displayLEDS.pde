@@ -39,7 +39,7 @@ void displayLEDS(){
     
   }
   // set hour
-  strip.setPixelColor(theHour, Color(hourColor[0],hourColor[1],hourColor[2]));
+  strip.setPixelColor(theHour, jWheel(80,16));
   strip.show();
 }
 

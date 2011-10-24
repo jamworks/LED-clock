@@ -26,9 +26,9 @@ int ledBGcolor=32;  //green
 int theHour = 4;
 int ledBGintensity=3;  //background intensity
 // secondLites array is the color and intensity of each possible seconds light
-int secondLites[11][2] ={{39,3},{42,4},{47,6},{52,9},{57,12},{62,16},{57,12},{52,9},{47,6},{42,4},{39,3}};
+int secondLites[11][2] ={{39,4},{42,4},{47,6},{52,9},{57,12},{62,17},{57,12},{52,9},{47,6},{42,4},{39,4}};
 // minuteLites array is the color and intensity of each possible seconds light
-int minuteLites[11][2] ={{25,3},{22,4},{17,6},{12,9},{7,12},{2,12},{7,12},{12,9},{17,6},{22,4},{25,3}};
+int minuteLites[11][2] ={{25,3},{22,4},{18,6},{12,9},{7,12},{2,12},{7,12},{12,9},{18,6},{22,4},{25,3}};
 // clockLEDs array hold the data for all the clock leds before merging the seconds and minutes
 // row 0 is seconds row 1 is minutes
 int clockLEDS[12][2];

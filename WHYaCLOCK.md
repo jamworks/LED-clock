@@ -9,6 +9,6 @@ After making sure the Laser cut box fit together and all 12 of the BlipTronics L
 were soldered into a string and tested, it looks like a clock. I used ome oiginal code by Bliptronics.com Ben Moyes 2009
 some Led code cleaned up and Object-ified by ladyada 2010 and added a few bits to make it all work together.
 
-![The begining](clockbox.jpg)
+![The begining](../../raw/master/clockbox.jpg)
 
 The [DS1307 Real Time Clock breakout board kit](http://www.adafruit.com/products/264) is from Adafruit.

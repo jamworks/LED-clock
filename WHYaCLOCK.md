@@ -12,3 +12,7 @@ some Led code cleaned up and Object-ified by ladyada 2010 and added a few bits t
 ![The begining](../../raw/master/clockbox.jpg)
 
 The [DS1307 Real Time Clock breakout board kit](http://www.adafruit.com/products/264) is from Adafruit.
+
+The real test is can you tell the time?
+![time](../../raw/master/img/ColorTime.JPG)
+Hope you see 1:05:24.

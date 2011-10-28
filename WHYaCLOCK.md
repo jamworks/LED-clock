@@ -19,3 +19,4 @@ The background color is green and the hours is Magenta(opposite green). The colo
 Hope you see 9:05:24.
 
 The SVG files for the laser cuttings are included along with the blender file for the 3D render.
+![render](../../raw/master/img/clockparts1.jpg)
